@@ -11,7 +11,7 @@ Karta projektu to pierwszy oficjalny dokument projektowy, który opisuje jego po
 | 3. Uzasadnienie edukacyjne | Dlaczego projekt jest potrzebny | "Obecnie proces jest manualny. System zautomatyzuje przydział tematów i formowanie grup." |
 | 4. Zakres projektu | Co wchodzi w zakres i co jest poza zakresem | "W zakresie: tematy, preferencje, grupy; poza zakresem: integracja z USOS w czasie rzeczywistym" |
 | 5. Główne wymagania | Wstępna lista funkcjonalności | "Student może wybrać preferencje, utworzyć grupę; Prowadzący może dodawać tematy" |
-| 6. Zespół projektowy i role | Lista członków i ich funkcji | "Projekt jest poprawioną wersję projektu realizowanego na innej uczelni. Frontend – M. Rutkowski, Frontend – M.Rutkowski" |
+| 6. Zespół projektowy i role | Lista członków i ich funkcji | "Projekt jest poprawioną wersję projektu realizowanego na innej uczelni. Frontend – M. Rutkowski, Backend – M.Rutkowski" |
 | 7. Zasoby i narzędzia | Technologie, środowisko, repozytorium | "GitHub, Django, Vue.js, SQLite/PostgreSQL" |
 | 8. Harmonogram wstępny | Etapy realizacji projektu | "Analiza wymagań (1-2 tyg.), Implementacja (3-20 tyg.), Testy (21-22 tyg.), Prezentacja (23 tydz.)" |
 | 9. Ryzyka i działania zapobiegawcze | Potencjalne zagrożenia i sposoby ich ograniczenia | "Brak doświadczenia w Vue.js → tutoriale i przykłady" |
