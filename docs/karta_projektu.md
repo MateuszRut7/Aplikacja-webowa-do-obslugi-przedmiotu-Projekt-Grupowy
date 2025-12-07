@@ -1,4 +1,5 @@
 # Karta projektu
+Projekt jest poprawioną wersję projektu realizowanego na innej uczelni
 
 Karta projektu to pierwszy oficjalny dokument projektowy, który opisuje jego podstawowe założenia: dlaczego projekt powstaje, co ma osiągnąć, jakie są ograniczenia, kto za co odpowiada i jak będzie mierzony sukces.
 
