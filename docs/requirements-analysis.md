@@ -178,33 +178,133 @@ flowchart LR
 - `«extend»`: "Tworzenie grupy" może zostać rozszerzone o "Generowanie kodu dostępu"
 - **Generalizacja**: `Użytkownik` ← `Student`, `Lecturer`, `Admin`
 
-### 4.3. Diagram można stworzyć w:
+## 5. 🔒 Wymagania niefunkcjonalne
 
-```plantuml
-@startuml
-left to right direction
+### 5.1. Bezpieczeństwo
+| Wymaganie | Opis | Implementacja w kodzie |
+|-----------|------|------------------------|
+| **NF1** | Autoryzacja oparta na rolach | `permissions.py` - custom permissions |
+| **NF2** | Walidacja danych wejściowych | Django ModelForms, serializers |
+| **NF3** | Ochrona przed atakami CSRF | Django CSRF middleware |
+| **NF4** | Bezpieczne przechowywanie haseł | Django Password hashers (bcrypt) |
+| **NF5** | Logowanie operacji administracyjnych | Django admin log entries |
 
-actor Student
-actor Lecturer
-actor Admin
+### 5.2. Wydajność
+| Wymaganie | Opis | Wymagany poziom |
+|-----------|------|-----------------|
+| **NF6** | Czas odpowiedzi API | < 2 sekundy dla 95% zapytań |
+| **NF7** | Obsługa równoczesnych użytkowników | 200 studentów + 5 prowadzących |
+| **NF8** | Czas ładowania strony głównej | < 3 sekundy |
+| **NF9** | Skalowalność baza danych | Obsługa do 500 użytkowników |
 
-rectangle System {
-  Student --> (Przeglądanie tematów)
-  Student --> (Składanie preferencji)
-  Student --> (Tworzenie grupy)
-  Student --> (Dołączanie do grupy)
-  Student --> (Przeglądanie mojej grupy)
-  
-  Lecturer --> (Zarządzanie tematami)
-  Lecturer --> (Przeglądanie preferencji)
-  Lecturer --> (Przydział grup)
-  Lecturer --> (Zarządzanie grupami)
-  
-  Admin --> (Zarządzanie użytkownikami)
-  Admin --> (Import z USOS)
-  Admin --> (Konfiguracja systemu)
-  
-  (Przydział grup) .> (Walidacja dostępności) : <<include>>
-}
-@enduml
-```
+### 5.3. Dostępność
+| Wymaganie | Opis | Status |
+|-----------|------|--------|
+| **NF10** | Dostępność systemu | 99% w godzinach pracy (8-20) |
+| **NF11** | Kompatybilność przeglądarek | Chrome, Firefox, Edge |
+| **NF12** | Responsywność interfejsu | Mobile, tablet, desktop (Vuetify) |
+| **NF13** | Backup danych | Raz w tygodniu |
+
+### 5.4. Użyteczność
+| Wymaganie | Opis | Implementacja |
+|-----------|------|---------------|
+| **NF14** | Intuicyjny interfejs | Vuetify Material Design |
+| **NF15** | Polska lokalizacja | Wszystkie komunikaty po polsku |
+| **NF16** | Komunikaty błędów | Czytelne komunikaty dla użytkowników |
+| **NF17** | Pomoc kontekstowa | Tooltips w interfejsie |
+
+### 5.5. Integracja
+| Wymaganie | Opis | Status |
+|-----------|------|--------|
+| **NF18** | Import z USOS | CSV import (`makeusers.py`) |
+| **NF19** | REST API | Django REST Framework |
+| **NF20** | Format danych | JSON dla API, CSV dla importu |
+
+## 6. 📊 Checklist dla wymagań niefunkcjonalnych
+
+### 🔒 **Bezpieczeństwo**
+- [x] Autoryzacja oparta na rolach
+- [x] Walidacja danych wejściowych
+- [x] Ochrona przed CSRF (Django)
+- [x] Hashowanie haseł
+- [ ] HTTPS/SSL (do wdrożenia)
+
+### ⚡ **Wydajność**
+- [x] Optymalne zapytania do bazy (Django ORM)
+- [ ] Cache'owanie danych (do implementacji)
+- [x] Paginacja list
+- [ ] Minifikacja assets (do implementacji)
+
+### 🌐 **Dostępność**
+- [x] Responsywny design (Vuetify)
+- [x] Kompatybilność z przeglądarkami
+- [ ] Monitoring (do wdrożenia)
+- [ ] Backup (do zautomatyzowania)
+
+### 🎨 **Użyteczność**
+- [x] Spójny design system
+- [x] Polska lokalizacja
+- [x] Komunikaty błędów po polsku
+- [ ] Dokumentacja użytkownika (do przygotowania)
+
+### 🔄 **Integracja**
+- [x] RESTful API
+- [x] Import z CSV (USOS)
+- [ ] Eksport danych (do implementacji)
+- [ ] Powiadomienia email (do implementacji)
+
+## 7. 🎯 Podsumowanie i refleksja
+
+### 7.1. Stan obecny projektu:
+✅ **Zaimplementowane:**
+- System autoryzacji z 3 rolami
+- Zarządzanie tematami projektowymi
+- System preferencji studentów
+- Formowanie grup projektowych
+- Import użytkowników z USOS
+- Responsywny frontend w Vue.js
+
+🔄 **Do rozwinięcia:**
+- System oceniania projektów
+- Zaawansowane algorytmy przydziału
+- System komunikacji wewnętrznej
+- Raporty i statystyki
+- Dokumentacja API
+
+### 7.2. Wnioski z analizy wymagań:
+1. **Sukces**: System dobrze rozwiązuje podstawowe problemy zarządzania projektami
+2. **Wyzwania**: Algorytm przydziału tematów wymaga optymalizacji
+3. **Rekomendacje**:
+   - Dodanie powiadomień email
+   - Implementacja systemu oceniania
+   - Testy integracyjne
+   - Dokumentacja użytkownika
+
+### 7.3. Wartość dla użytkowników:
+- **Dla studentów**: Transparentny proces przydziału tematów
+- **Dla prowadzących**: Automatyzacja pracy administracyjnej
+- **Dla administracji**: Centralizacja danych projektowych
+
+---
+
+## 8. 📁 Załączniki
+
+### 8.1. Struktura API:
+- `GET /api/topics/` - lista tematów
+- `POST /api/preferences/` - składanie preferencji
+- `GET /api/groups/` - zarządzanie grupami
+- `POST /api/auth/login/` - logowanie
+
+### 8.2. Technologie:
+- **Backend**: Django 3.2, Django REST Framework, SQLite
+- **Frontend**: Vue.js 2, Vue Router, Vuetify, Axios
+- **Narzędzia**: Git, pip, npm
+
+---
+
+## 📅 Informacje o dokumencie
+- **Data**: 2025-12-07
+- **Autor**: Mateusz Rutkowski
+- **Przedmiot**: Projekt Grupowy
+- **Uczelnia**: Politechnika Warszawska
+- **Wersja**: 1.0
