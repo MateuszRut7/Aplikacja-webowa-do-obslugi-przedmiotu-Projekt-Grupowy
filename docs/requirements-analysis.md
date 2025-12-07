@@ -134,29 +134,39 @@ Aplikacja webowa do kompleksowej obsługi przedmiotu "Projekt Grupowy" na Polite
 
 ### 4.1. Główne akty i przypadki użycia:
 
-+----------------+                     +---------------------------+
-|    Student     |                     |          System           |
-+----------------+                     +---------------------------+
-        |                                      |
-        |------------------------------------->| Przeglądanie tematów
-        |------------------------------------->| Składanie preferencji
-        |------------------------------------->| Tworzenie grupy
-        |------------------------------------->| Dołączanie do grupy
-        |------------------------------------->| Przeglądanie mojej grupy
-        |                                      |
-+----------------+                     +---------------------------+
-|    Lecturer    |----------------------------------------------->|
-+----------------+                                                 |
-        |                                                          |
-        |------------------------------------->| Zarządzanie tematami
-        |------------------------------------->| Przeglądanie preferencji
-        |------------------------------------->| Przydział grup
-        |------------------------------------->| Zarządzanie grupami
-        |
-+----------------+
-|     Admin      |
-+----------------+
-        |
-        |------------------------------------->| Zarządzanie użytkownikami
-        |------------------------------------->| Import z USOS
-        |------------------------------------->| Konfiguracja systemu
+flowchart LR
+    actor1([Student])
+    actor2([Lecturer])
+    actor3([Admin])
+
+    subgraph System
+        uc1(Przeglądanie tematów)
+        uc2(Składanie preferencji)
+        uc3(Tworzenie grupy)
+        uc4(Dołączanie do grupy)
+        uc5(Przeglądanie mojej grupy)
+
+        uc6(Zarządzanie tematami)
+        uc7(Przeglądanie preferencji)
+        uc8(Przydział grup)
+        uc9(Zarządzanie grupami)
+
+        uc10(Zarządzanie użytkownikami)
+        uc11(Import z USOS)
+        uc12(Konfiguracja systemu)
+    end
+
+    actor1 --> uc1
+    actor1 --> uc2
+    actor1 --> uc3
+    actor1 --> uc4
+    actor1 --> uc5
+
+    actor2 --> uc6
+    actor2 --> uc7
+    actor2 --> uc8
+    actor2 --> uc9
+
+    actor3 --> uc10
+    actor3 --> uc11
+    actor3 --> uc12
