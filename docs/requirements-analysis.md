@@ -1,4 +1,4 @@
-# Moduł 2: Analiza wymagań - Aplikacja Webowa do Obsługi Projektu Grupowego
+# Analiza wymagań - Aplikacja Webowa do Obsługi Projektu Grupowego
 
 ## 📋 Plan
 - ✅ Analiza wymagań w projektach IT 
