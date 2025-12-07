@@ -46,7 +46,7 @@ Aplikacja webowa do kompleksowej obsługi przedmiotu "Projekt Grupowy" na Polite
 | **Prowadzący** | `User(is_lecturer=True)` | Zarządzanie tematami, przydział grup, ocenianie | Wysoki |
 | **Administrator** | `User(is_staff=True)` | Zarządzanie użytkownikami, konfiguracja systemu | Średni |
 
-### Szczegółowe potrzeby na podstawie analizy kodu:
+### Szczegółowe potrzeby:
 
 **Student (z modelu `users/models.py`):**
 - Możliwość logowania się do systemu
