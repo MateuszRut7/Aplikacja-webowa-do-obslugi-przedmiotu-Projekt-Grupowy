@@ -116,10 +116,8 @@ Projekt rozwiązuje te problemy poprzez:
 
 | Rola | Osoba odpowiedzialna | Główne zadania |
 |------|----------------------|----------------|
-| **Product Owner** | Michał Cybulski | Definiowanie wymagań, priorytetyzacja backlogu, akceptacja funkcji, reprezentowanie interesariuszy |
-| **Scrum Master** | Aleksandra Harasimiuk | Organizacja Scrum (daily, sprint review, retrospective), usuwanie przeszkód, monitorowanie postępów, dokumentacja spotkań |
 | **Programista Frontend** | Mateusz Rutkowski | Implementacja interfejsu użytkownika w Vue.js, komponenty Vuetify, integracja z REST API, responsywność, UX |
-| **Programista Backend** | Adam Szewczyk | Implementacja Django REST API, modele danych, logika biznesowa, baza danych, bezpieczeństwo, optymalizacja |
+| **Programista Backend** | Mateusz Rutkowski | Implementacja Django REST API, modele danych, logika biznesowa, baza danych, bezpieczeństwo, optymalizacja |
 
 ---
 
@@ -130,7 +128,6 @@ Projekt rozwiązuje te problemy poprzez:
 | **Metodologia** | Scrum | Organizacja pracy, planowanie sprintów, śledzenie postępów |
 | **Zarządzanie projektem** | GitHub, Discord | Planowanie zadań, komunikacja, dokumentacja zespołowa |
 | **Repozytorium kodu** | GitHub | Kontrola wersji kodu źródłowego i dokumentacji |
-| **Analiza i projektowanie** | Draw.io, Miro, PlantUML | Diagramy przypadków użycia, diagramy UML, mapy procesów |
 | **Programowanie backend** | Python 3.9, Django 3.2, Django REST Framework, SQLite/PostgreSQL | Implementacja REST API, baza danych, logika aplikacji |
 | **Programowanie frontend** | Vue.js 2, Vue Router, Vuex, Vuetify, Axios | Implementacja interfejsu użytkownika, zarządzanie stanem |
 | **Środowisko developerskie** | VS Code, Git, virtualenv, npm, pip | Rozwój, testowanie, zarządzanie zależnościami |
@@ -202,7 +199,7 @@ Projekt rozwiązuje te problemy poprzez:
 | Funkcja | Imię i nazwisko | Data | Podpis |
 |---------|----------------|------|--------|
 | Programista Frontend | Mateusz Rutkowski | 7.12.2025 | __________ |
-| Programista Backend | Adam Szewczyk | 7.12.2025 | __________ |
+| Programista Backend | Mateusz Rutkowski | 7.12.2025 | __________ |
 | Prowadzący | mgr Wojciech Moniuszko | 7.12.2025 | __________ |
 
 ---
