@@ -11,7 +11,7 @@ Karta projektu to pierwszy oficjalny dokument projektowy, który opisuje jego po
 | 3. Uzasadnienie edukacyjne | Dlaczego projekt jest potrzebny | "Obecnie proces jest manualny. System zautomatyzuje przydział tematów i formowanie grup." |
 | 4. Zakres projektu | Co wchodzi w zakres i co jest poza zakresem | "W zakresie: tematy, preferencje, grupy; poza zakresem: integracja z USOS w czasie rzeczywistym" |
 | 5. Główne wymagania | Wstępna lista funkcjonalności | "Student może wybrać preferencje, utworzyć grupę; Prowadzący może dodawać tematy" |
-| 6. Zespół projektowy i role | Lista członków i ich funkcji | "Product Owner – M. Cybulski, Scrum Master – A. Harasimiuk, Frontend – M. Rutkowski, Backend – A. Szewczyk" |
+| 6. Zespół projektowy i role | Lista członków i ich funkcji | "Projekt jest poprawioną wersję projektu realizowanego na innej uczelni. Frontend – M. Rutkowski, Frontend – M.Rutkowski" |
 | 7. Zasoby i narzędzia | Technologie, środowisko, repozytorium | "GitHub, Django, Vue.js, SQLite/PostgreSQL" |
 | 8. Harmonogram wstępny | Etapy realizacji projektu | "Analiza wymagań (1-2 tyg.), Implementacja (3-20 tyg.), Testy (21-22 tyg.), Prezentacja (23 tydz.)" |
 | 9. Ryzyka i działania zapobiegawcze | Potencjalne zagrożenia i sposoby ich ograniczenia | "Brak doświadczenia w Vue.js → tutoriale i przykłady" |
@@ -31,20 +31,18 @@ Aplikacja Webowa do Obsługi Przedmiotu "Projekt Grupowy"
 **Akronim projektu:**  
 AW-PG
 
-**Data utworzenia:** 7.10.2021
+**Data utworzenia:** 7.12.2025
 **Wersja dokumentu:** 1.0  
 
 **Zespół projektowy:**
 
 | Imię i nazwisko | Rola w projekcie | Zakres odpowiedzialności |
 |-----------------|------------------|--------------------------|
-| Michał Cybulski | Product Owner / Kierownik projektu | Definiowanie wymagań, priorytetyzacja, komunikacja z interesariuszami, planowanie |
-| Aleksandra Harasimiuk | Scrum Master | Organizacja spotkań, notatki z daily, usuwanie przeszkód, monitorowanie postępów |
 | Mateusz Rutkowski | Programista Frontend | Implementacja interfejsu użytkownika (Vue.js), integracja z API, UI/UX |
-| Adam Szewczyk | Programista Backend | Implementacja logiki biznesowej (Django), baza danych, REST API |
+| Mateusz Rutkowski | Programista Backend | Implementacja logiki biznesowej (Django), baza danych, REST API |
 
-**Prowadzący:** dr inż. Przemysław Korpas  
-**Jednostka dydaktyczna:** Politechnika Warszawska, Wydział Elektroniki i Technik Informacyjnych
+**Prowadzący:** mgr Wojciech Moniuszko
+**Jednostka dydaktyczna:** WSPA
 
 ---
 
@@ -203,11 +201,9 @@ Projekt rozwiązuje te problemy poprzez:
 
 | Funkcja | Imię i nazwisko | Data | Podpis |
 |---------|----------------|------|--------|
-| Product Owner / Kierownik projektu | Michał Cybulski | 7.12.2025 | __________ |
-| Scrum Master | Aleksandra Harasimiuk | 7.12.2025 | __________ |
 | Programista Frontend | Mateusz Rutkowski | 7.12.2025 | __________ |
 | Programista Backend | Adam Szewczyk | 7.12.2025 | __________ |
-| Prowadzący | dr inż. Przemysław Korpas | [Data akceptacji] | __________ |
+| Prowadzący | mgr Wojciech Moniuszko | 7.12.2025 | __________ |
 
 ---
 
