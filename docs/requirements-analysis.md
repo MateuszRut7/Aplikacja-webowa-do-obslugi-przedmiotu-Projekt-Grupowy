@@ -1,6 +1,6 @@
 # Moduł 2: Analiza wymagań - Aplikacja Webowa do Obsługi Projektu Grupowego
 
-## 📋 Plan modułu 2
+## 📋 Plan
 - ✅ Analiza wymagań w projektach IT 
 - ✅ Warsztat: identyfikacja interesariuszy
 - ✅ Przygotowanie listy wymagań funkcjonalnych
