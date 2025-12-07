@@ -171,3 +171,40 @@ flowchart LR
     actor3 --> uc10
     actor3 --> uc11
     actor3 --> uc12
+```
+
+### 4.2. Relacje między przypadkami użycia:
+- `«include»`: "Przydział grup" includes "Walidacja dostępności tematów"
+- `«extend»`: "Tworzenie grupy" może zostać rozszerzone o "Generowanie kodu dostępu"
+- **Generalizacja**: `Użytkownik` ← `Student`, `Lecturer`, `Admin`
+
+### 4.3. Diagram można stworzyć w:
+
+```plantuml
+@startuml
+left to right direction
+
+actor Student
+actor Lecturer
+actor Admin
+
+rectangle System {
+  Student --> (Przeglądanie tematów)
+  Student --> (Składanie preferencji)
+  Student --> (Tworzenie grupy)
+  Student --> (Dołączanie do grupy)
+  Student --> (Przeglądanie mojej grupy)
+  
+  Lecturer --> (Zarządzanie tematami)
+  Lecturer --> (Przeglądanie preferencji)
+  Lecturer --> (Przydział grup)
+  Lecturer --> (Zarządzanie grupami)
+  
+  Admin --> (Zarządzanie użytkownikami)
+  Admin --> (Import z USOS)
+  Admin --> (Konfiguracja systemu)
+  
+  (Przydział grup) .> (Walidacja dostępności) : <<include>>
+}
+@enduml
+```
