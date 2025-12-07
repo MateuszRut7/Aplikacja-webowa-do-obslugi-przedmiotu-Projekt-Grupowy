@@ -134,30 +134,34 @@ Aplikacja webowa do kompleksowej obsługi przedmiotu "Projekt Grupowy" na Polite
 
 ### 4.1. Główne akty i przypadki użycia:
 
-+----------------+ +---------------------------+
-| Student | | System |
-|----------------| |---------------------------|
-| |------| Przeglądanie tematów |
-| | | Składanie preferencji |
-| |------| Tworzenie grupy |
-| | | Dołączanie do grupy |
-+----------------+ | Przeglądanie mojej grupy |
-+---------------------------+
-^
-|
-+----------------+ |
-Lecturer	
-	--------------	Zarządzanie tematami
-		Przeglądanie preferencji
-	--------------	Przydział grup
-		Zarządzanie grupami
-+----------------+	
-+----------------+ |
-| Admin |--------------|
-|----------------| | Zarządzanie użytkownikami
-| | | Import z USOS
-| | | Konfiguracja systemu
-+----------------+ +---------------------------+
++----------------+                     +---------------------------+
+|    Student     |                     |          System           |
++----------------+                     +---------------------------+
+        |                                      |
+        |------------------------------------->| Przeglądanie tematów
+        |------------------------------------->| Składanie preferencji
+        |------------------------------------->| Tworzenie grupy
+        |------------------------------------->| Dołączanie do grupy
+        |------------------------------------->| Przeglądanie mojej grupy
+        |                                      |
++----------------+                     +---------------------------+
+|    Lecturer    |----------------------------------------------->|
++----------------+                                                 |
+        |                                                          |
+        |------------------------------------->| Zarządzanie tematami
+        |------------------------------------->| Przeglądanie preferencji
+        |------------------------------------->| Przydział grup
+        |------------------------------------->| Zarządzanie grupami
+        |
++----------------+
+|     Admin      |
++----------------+
+        |
+        |------------------------------------->| Zarządzanie użytkownikami
+        |------------------------------------->| Import z USOS
+        |------------------------------------->| Konfiguracja systemu
+
+
 ### 4.2. Relacje między przypadkami użycia:
 - `«include»`: "Przydział grup" includes "Walidacja dostępności tematów"
 - `«extend»`: "Tworzenie grupy" może zostać rozszerzone o "Generowanie kodu dostępu"
