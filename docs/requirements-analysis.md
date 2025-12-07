@@ -137,7 +137,7 @@ Aplikacja webowa do kompleksowej obsługi przedmiotu "Projekt Grupowy" na Polite
 ```mermaid
 flowchart LR
     actor1([Student])
-    actor2([Lecturer])
+    actor2([Prowadzący])
     actor3([Admin])
 
     subgraph System
@@ -306,5 +306,5 @@ flowchart LR
 - **Data**: 2025-12-07
 - **Autor**: Mateusz Rutkowski
 - **Przedmiot**: Projekt Grupowy
-- **Uczelnia**: Politechnika Warszawska
+- **Uczelnia**: WSPA
 - **Wersja**: 1.0
