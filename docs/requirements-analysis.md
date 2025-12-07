@@ -51,18 +51,14 @@ Aplikacja webowa do kompleksowej obsługi przedmiotu "Projekt Grupowy" na Polite
 **Student (z modelu `users/models.py`):**
 - Możliwość logowania się do systemu
 - Przeglądanie listy dostępnych tematów (`/api/topics/`)
-- Składanie preferencji tematycznych (1-5 priorytet) (`/api/preferences/`)
+- Składanie preferencji tematycznych (1-3 priorytet) (`/api/preferences/`)
 - Formowanie/dołączanie do grup projektowych (`/api/groups/`)
 - Przeglądanie przydzielonego tematu i grupy
-- Komunikacja z prowadzącym
 
 **Prowadzący (Lecturer):**
 - Tworzenie i edycja tematów projektowych (`Topic` model)
-- Ustalanie limitów grup per temat (`max_groups` field)
 - Przeglądanie preferencji studentów
-- Przydział tematów do grup (algorytm lub ręczny)
-- Zarządzanie grupami (akceptacja, usuwanie członków)
-- System oceniania projektów
+- Przydział tematów do grup
 
 **Administrator:**
 - Import użytkowników z USOS (skrypt `makeusers.py`)
@@ -74,15 +70,14 @@ Aplikacja webowa do kompleksowej obsługi przedmiotu "Projekt Grupowy" na Polite
 ---
 ## 3. 📑 Wymagania funkcjonalne
 
-### 3.1. Lista wymagań w formie tabelarycznej (na podstawie rzeczywistego kodu)
+### 3.1. Lista wymagań w formie tabelarycznej:
 
 | ID | Opis wymagania | Priorytet | Źródło (plik) | Status |
 |----|----------------|-----------|---------------|--------|
 | **F1** | System musi umożliwiać logowanie użytkowników z rolą (student/lecturer/admin) | Must | `users/models.py` | ✅ |
 | **F2** | Student może przeglądać listę dostępnych tematów projektowych | Must | `topics/views.py` | ✅ |
-| **F3** | Student może składać preferencje tematyczne (ranking 1-5) | Must | `preferences/models.py` | ✅ |
+| **F3** | Student może składać preferencje tematyczne (ranking 1-3) | Must | `preferences/models.py` | ✅ |
 | **F4** | Prowadzący może tworzyć i edytować tematy projektowe | Must | `topics/views.py` | ✅ |
-| **F5** | Prowadzący może ustawić maksymalną liczbę grup per temat | Should | `topics/models.py` | ✅ |
 | **F6** | Student może utworzyć nową grupę projektową | Must | `groups/views.py` | ✅ |
 | **F7** | Student może dołączyć do istniejącej grupy | Must | `groups/views.py` | ✅ |
 | **F8** | Prowadzący może przydzielić temat grupie | Must | `groups/models.py` | ✅ |
@@ -91,10 +86,8 @@ Aplikacja webowa do kompleksowej obsługi przedmiotu "Projekt Grupowy" na Polite
 | **F11** | System wyświetla różne widoki w zależności od roli użytkownika | Must | `permission.py` | ✅ |
 | **F12** | Student może zobaczyć swój przydzielony temat i grupę | Must | Frontend components | ✅ |
 | **F13** | Prowadzący może zobaczyć listę wszystkich grup | Must | `GroupsTable.vue` | ✅ |
-| **F14** | System waliduje unikalność preferencji studenta | Should | `preferences/models.py` | ✅ |
-| **F15** | System zapobiega dołączaniu do pełnych grup | Should | `groups/views.py` | ✅ |
 
-### 3.2. User Stories (na podstawie komponentów Vue)
+### 3.2. User Stories:
 
 **Jako student:**
 - "Jako student, chcę się zalogować, aby uzyskać dostęp do systemu" (`Login.vue`)
@@ -107,21 +100,19 @@ Aplikacja webowa do kompleksowej obsługi przedmiotu "Projekt Grupowy" na Polite
 - "Jako prowadzący, chcę dodawać nowe tematy projektowe, aby zapewnić różnorodność wyboru" (`TopicsForm.vue`)
 - "Jako prowadzący, chcę zarządzać grupami studentów, aby zapewnić prawidłowy podział" (`GroupsTable.vue`)
 - "Jako prowadzący, chcę przydzielać tematy grupom, aby rozpocząć pracę projektową"
-- "Jako prowadzący, chcę przeglądać listę wszystkich studentów, aby monitorować postępy" (`StudentsTable.vue`)
 
 **Jako administrator:**
 - "Jako administrator, chcę importować użytkowników z USOS, aby zaoszczędzić czas na ręczne wpisywanie"
 - "Jako administrator, chcę zarządzać uprawnieniami użytkowników, aby zapewnić bezpieczeństwo systemu"
 
-### 3.3. Przypadki użycia - szczegóły z kodu
-
+### 3.3. Przypadki użycia:
 **Przypadek użycia: "Składanie preferencji tematycznych"**
 - **Aktor**: Student
 - **Warunki początkowe**: Student jest zalogowany, są dostępne tematy
 - **Scenariusz główny**:
   1. Student wybiera "Preferencje" z menu
   2. System wyświetla listę dostępnych tematów
-  3. Student przypisuje priorytety (1-najwyższy, 5-najniższy)
+  3. Student przypisuje priorytety (1-najwyższy, 3-najniższy)
   4. Student zapisuje preferencje
   5. System waliduje unikalność priorytetów
 - **Scenariusz alternatywny**: Brak dostępnych tematów → system wyświetla komunikat
@@ -132,7 +123,7 @@ Aplikacja webowa do kompleksowej obsługi przedmiotu "Projekt Grupowy" na Polite
 - **Scenariusz główny**:
   1. Student wybiera "Utwórz grupę"
   2. Student podaje nazwę grupy
-  3. System tworzy grupę i ustawia studenta jako lidera
+  3. System tworzy grupę
   4. System wyświetla kod dostępu do grupy
 - **Scenariusze alternatywne**:
   - Student już należy do grupy → system blokuje tworzenie nowej
