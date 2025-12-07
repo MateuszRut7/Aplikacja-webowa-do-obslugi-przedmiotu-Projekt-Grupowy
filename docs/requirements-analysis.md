@@ -134,6 +134,7 @@ Aplikacja webowa do kompleksowej obsługi przedmiotu "Projekt Grupowy" na Polite
 
 ### 4.1. Główne akty i przypadki użycia:
 
+```mermaid
 flowchart LR
     actor1([Student])
     actor2([Lecturer])
